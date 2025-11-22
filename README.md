@@ -1,8 +1,5 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-terraform init
-terraform apply
-
 ## Getting Started
 
 # Step 1: build the lambda function using the provided Bash script, or Powershell script. It is not exactly a build, it only creates a zip file containing the Python file.
@@ -24,6 +21,10 @@ This is just a quick example, the state is stored locally, and there are variabl
 # Step 3: Configure the application's .env file
 
 You can simply copy the provided .env.example file and save it as .env
+
+```bash
+cp .env.example .env
+```
 
 # Step 4: Run the development server
 
