@@ -2,7 +2,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-# Step 1: build the lambda function using the provided Bash script, or Powershell script. It is not exactly a build, it only creates a zip file containing the Python file.
+# Step 1: build the lambda function using the provided Bash script, or Powershell script.
+
+It is not exactly a build, it only creates a zip file containing the Python file.
 
 ```bash
 cd backend/lambda
