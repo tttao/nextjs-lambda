@@ -1,0 +1,25 @@
+# Example Serverless Framework Configuration
+# Note: This configuration requires additional Lambda adapter code to work with Next.js
+# Consider using OpenNext or serverless-http for production deployments
+service: nextjs-lambda-app
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  memorySize: 1024
+  timeout: 30
+
+functions:
+  nextjs:
+    handler: .next/standalone/server.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+      - http:
+          path: /{proxy+}
+          method: ANY
+
+plugins:
+  - serverless-nextjs-plugin
