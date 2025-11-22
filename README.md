@@ -59,37 +59,46 @@ nextjs-lambda/
 │       └── page.tsx               # Home page
 ├── next.config.js                 # Next.js configuration
 ├── package.json
-├── serverless.yml                 # Serverless Framework config
+├── serverless.yml                 # Example Serverless config (requires adapter)
+├── template.yaml                  # Example AWS SAM config (requires adapter)
 └── tsconfig.json
 ```
 
 ## Deployment to AWS Lambda
 
-### Option 1: Using Serverless Framework
+**Note**: The included `serverless.yml` and `template.yaml` files are example configurations. Next.js doesn't generate Lambda-compatible handlers out of the box. For production deployments, you'll need to use a Lambda adapter solution.
 
-1. Install Serverless Framework globally:
+### Recommended: Using OpenNext
+
+[OpenNext](https://open-next.js.org/) is the recommended solution for deploying Next.js to AWS Lambda:
+
+```bash
+npm install -g open-next
+open-next build
+```
+
+Then deploy using AWS CDK, Terraform, or SST.
+
+### Option 2: Using Serverless Framework with Adapter
+
+1. Install required dependencies:
 ```bash
 npm install -g serverless
+npm install serverless-http
 ```
 
-2. Deploy to AWS:
-```bash
-npm run build
-serverless deploy
-```
+2. Create a custom handler to wrap Next.js
+3. Deploy using `serverless deploy`
 
-### Option 2: Using AWS SAM
+### Option 3: Using AWS SAM with Adapter
 
 1. Build the Next.js application:
 ```bash
 npm run build
 ```
 
-2. Package and deploy using AWS SAM CLI (template required).
-
-### Option 3: Using OpenNext
-
-For more advanced Lambda deployments, consider using [OpenNext](https://open-next.js.org/).
+2. Add a Lambda Web Adapter or custom handler
+3. Deploy using AWS SAM CLI
 
 ## Features
 

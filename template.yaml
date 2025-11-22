@@ -1,6 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Next.js Lambda Application
+Description: >
+  Next.js Lambda Application - Example AWS SAM Template
+  Note: This template requires additional Lambda adapter code to work with Next.js.
+  Consider using OpenNext or AWS Lambda Web Adapter for production deployments.
 
 Globals:
   Function:

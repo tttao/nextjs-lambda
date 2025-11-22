@@ -1,3 +1,6 @@
+# Example Serverless Framework Configuration
+# Note: This configuration requires additional Lambda adapter code to work with Next.js
+# Consider using OpenNext or serverless-http for production deployments
 service: nextjs-lambda-app
 
 provider:
